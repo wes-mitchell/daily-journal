@@ -5,14 +5,13 @@
 .journal-form {
   display: flex;
   flex-direction: column;
+  /* min-width: 14.82em; */
 }
 
 form {
   max-width: fit-content;
 }
-.width {
-  width: 15em;
-}
+
 
 footer {
   border: solid black 1px;
