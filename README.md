@@ -1,0 +1,1 @@
+![dailyJournalWireframe](/images/dailyJournalWireframe.jpg)

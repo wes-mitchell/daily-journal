@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+}
+
+.journal-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.width {
+  width: 15em;
+}
+.footer {
+  display: flex;  
+  list-style: none;
+  justify-content: space-evenly;
+}
