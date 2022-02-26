@@ -2,21 +2,65 @@
   display: flex;
 }
 
+body {
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px;
+  background-color: rgb(53, 79, 82)
+}
+
+.mainsection {
+  width: 15em;
+}
+
+.coffeeCup {
+  background-color: transparent;
+}
+
+/* .coffee-image {
+  background-image: image(/images/coffee2.jpg);
+  background-color: transparent;
+} */
+
+h1 {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  color: rgb(132, 169, 140);
+  margin-left: 4.20px;
+}
+
+ h2 {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  color: rgb(132, 169, 140);
+  margin-left: 4.20px;
+ }
+
 .journal-form {
   display: flex;
   flex-direction: column;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  color: rgb(132, 169, 140);
   /* min-width: 14.82em; */
 }
 
-form {
-  max-width: fit-content;
+.width {
+  text-align: left;
 }
-
+.entry-list {
+  color: rgb(132, 169, 140);
+  font-family: 'Fira Sans Condensed', sans-serif;
+  margin-left: 4.25px;
+}
 
 footer {
   border: solid black 1px;
   display: flex;
   justify-content: flex-start;  
   text-decoration: none;
-  width: 14.82em;
+  width: 15em;
+  margin-left: 4.20px;
+}
+
+.copyright {
+  color: rgb(132, 169, 140);
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
