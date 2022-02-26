@@ -6,55 +6,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles/main.css">
   <title>Wesley Mitchell's Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="mainsection">
+    <header>
+      <h1>My Daily Journal</h1>
+      <div class="coffee-image">
+        <!-- <img src="/images/coffee2.jpg" alt="paper coffee cup" class="coffeeCup"> -->
+      </div>
+    </header>
 
-  <header>
-    <h1>My Daily Journal</h1>
-    <div class="coffee-image">
-      <img src="/images/coffee.jfif" alt="paper coffee cup" class="coffeeCup">
-    </div>
-  </header>
+    <main>
 
-  <main>
+      <section class="form">
+        <h2>What's on your mind today?</h2>
+        <form action="">
+          <fieldset class="journal-form">
+            <label for="journalDate">Date of entry</label><br>
+            <input type="date" name="journalDate" id="journalDate" class="width"><br>
+            <label for="conceptsCovered">Concepts Covered</label><br>
+            <input type="text" name="conceptsCovered" id="conceptsCovered" class="width"><br>
+            <label for="journalEntry">Journal Entry</label><br>
+            <textarea id="journalEntry" name="journalEntry" rows="5" cols="25"></textarea><br>
+            <label for="dailyMood">Mood for the day</label><br>
+            <select name="dailyMood" id="dailyMood" class="width">
+              <option value="happy">Happy</option>
+              <option value="pumped">Pumped</option>
+              <option value="dobetter">Could be better</option>
+              <option value="bummed">Bummed</option>
+            </select>
+            <label for="submit"></label><br>
+            <input type="submit" value="Stash that bad boy" class="width"><br>
+            </form>
+          </fieldset>
+        </form>
+      </section>
 
-    <section>
-      <h2>What's on your mind today?</h2>
-      <form action="">
-        <fieldset class="journal-form">
-          <label for="journalDate">Date of entry</label><br>
-          <input type="date" name="journalDate" id="journalDate" class="width"><br>
-          <label for="conceptsCovered">Concepts Covered</label><br>
-          <input type="text" name="conceptsCovered" id="conceptsCovered" class="width"><br>
-          <label for="journalEntry">Journal Entry</label><br>
-          <textarea id="journalEntry" name="journalEntry" rows="5" cols="25"></textarea><br>
-          <label for="dailyMood">Mood for the day</label><br>
-          <select name="dailyMood" id="dailyMood" class="width">
-            <option value="happy">Happy</option>
-            <option value="pumped">Pumped</option>
-            <option value="dobetter">Could be better</option>
-            <option value="bummed">Bummed</option>
-          </select>
-          <label for="submit"></label><br><br>
-          <input type="submit" value="Stash that bad boy" class="width"><br>
-          </form>
-        </fieldset>
-      </form>
-    </section>
+      <section class="entry-list">
+        <h3>Journal Entries</h3>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </section>
 
-    <section class="entry-list">
-      <h3>Journal Entries</h3>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
-    </section>
-
-  </main>
-    <footer>
-        <a href="https://github.com/wes-mitchell" style="text-decoration: none">&copy; Wesley Mitchell</a>
-    </footer>
-  <script src="/scripts/main.js"></script>
+    </main>
+      <footer>
+          <a href="https://github.com/wes-mitchell" style="text-decoration: none" class="copyright">&copy; Wesley Mitchell</a>
+      </footer>
+    <script src="/scripts/main.js"></script>
+  </div>
 </body>
 </html>
