@@ -1,7 +1,3 @@
-.header {
-  display: flex;
-}
-
 body {
   display: flex;
   justify-content: flex-start;
@@ -13,18 +9,20 @@ body {
   width: 15em;
 }
 
-.coffeeCup {
-  background-color: transparent;
+.coffee-image {
+  background-color: rgb(53, 79, 82);
+  padding: 0em;
 }
 
-/* .coffee-image {
-  background-image: image(/images/coffee2.jpg);
-  background-color: transparent;
-} */
+.coffeeCup {
+  width: 200px;
+  height: 200px;
+}
 
 h1 {
   font-family: 'Fira Sans Condensed', sans-serif;
   color: rgb(132, 169, 140);
+  margin-top: 0em;
   margin-left: 4.20px;
 }
 
@@ -49,6 +47,7 @@ h1 {
   color: rgb(132, 169, 140);
   font-family: 'Fira Sans Condensed', sans-serif;
   margin-left: 4.25px;
+  list-style: none;
 }
 
 footer {
