@@ -26,20 +26,20 @@
         <form action="">
           <fieldset class="journal-form">
             <label for="journalDate">Date of entry</label><br>
-            <input type="date" name="journalDate" id="journalDate" class="width"><br>
-            <label for="conceptsCovered">Concepts Covered</label><br>
-            <input type="text" name="conceptsCovered" id="conceptsCovered" class="width"><br>
-            <label for="journalEntry">Journal Entry</label><br>
-            <textarea id="journalEntry" name="journalEntry" rows="5" cols="25"></textarea><br>
+            <input type="date" name="journalDate" id="journalDate" class="dateAndMood"><br>
             <label for="dailyMood">Mood for the day</label><br>
-            <select name="dailyMood" id="dailyMood" class="width">
+            <select name="dailyMood" id="dailyMood" class="dateAndMood">
               <option value="happy">Happy</option>
               <option value="pumped">Pumped</option>
               <option value="dobetter">Could be better</option>
               <option value="bummed">Bummed</option>
-            </select>
+            </select><br>
+            <label for="conceptsCovered" class="concepts">Concepts Covered</label><br>
+            <input type="text" name="conceptsCovered" id="conceptsCovered"><br>
+            <label for="journalEntry">Journal Entry</label><br>
+            <textarea id="journalEntry" name="journalEntry" rows="5" cols="25" class="entry"></textarea><br>
             <label for="submit"></label><br>
-            <input type="submit" value="Stash that bad boy" class="width"><br>
+            <input type="submit" value="Stash that bad boy" class="button"><br>
             </form>
           </fieldset>
         </form>

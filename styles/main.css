@@ -6,7 +6,7 @@ body {
 }
 
 .mainsection {
-  width: 15em;
+  max-width: 15em;
 }
 
 .coffee-image {
@@ -42,6 +42,7 @@ h1 {
 
 .width {
   text-align: left;
+  margin-top: 5px;
 }
 .entry-list {
   color: rgb(132, 169, 140);
@@ -62,4 +63,22 @@ footer {
 .copyright {
   color: rgb(132, 169, 140);
   font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.dateAndMood {
+  width: 61%;
+}
+
+.button {
+  width: 65%;
+  text-align: left;
+  margin-top: -5px;
+}
+
+.concepts {
+  margin-top: 15pem
+}
+
+#entryLog {
+  margin-left: 4.2px;
 }
