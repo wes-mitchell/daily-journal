@@ -32,6 +32,10 @@ h1 {
   margin-left: 4.20px;
  }
 
+ h3 {
+   text-decoration: underline;
+ }
+
 .journal-form {
   display: flex;
   flex-direction: column;
@@ -81,4 +85,9 @@ footer {
 
 #entryLog {
   margin-left: 4.2px;
+}
+
+.journalEntry {
+  color: rgb(132, 169, 140);
+  font-family: 'Fira Sans Condensed', sans-serif;
 }
