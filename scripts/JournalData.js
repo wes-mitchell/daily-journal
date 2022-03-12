@@ -26,8 +26,15 @@ const journal = [
   {
     id: 3,
     date: "02/14/2022",
-    concept: "Fundamental Javasctipt",
+    concept: "Fundamental Javascript",
     entry: "We began to cover the fundamentals of functions in Javascript.",
+    mood: "Stoked"
+  },
+  {
+    id: 4,
+    date: "03/11/2022",
+    concept: "Event Listeners",
+    entry: "We began to cover the fundamentals of adding event listeners and manipulating the DOM with javascript.",
     mood: "Stoked"
   }
 ]
