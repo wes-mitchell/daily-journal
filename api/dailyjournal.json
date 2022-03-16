@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "name": "Wes Mitchell",
+      "id": 1
+    },
+    {
+      "name": "John Moler",
+      "id": 2
+    },
+    {
+      "name": "Keegan Kellogg",
+      "id": 3
+    }
+  ],
+  "journal-entries": [
+    {
+      "id": 1,
+      "date": "02/28/2022",
+      "concept": "Modular Javascript Functions",
+      "text": "We learned how to build HTML elements and insert them into are index.html file",
+      "mood": "Pumped"
+    },
+    {
+      "id": 2,
+      "date": "02/26/2022",
+      "concept": "Working in a group",
+      "text": "We worked in a group project titled Hello World to dividing small tasks amongst each team member to build and complete a mock travel website.",
+      "mood": "Happy"
+  },
+  {
+    "id": 3,
+    "date": "02/14/2022",
+    "concept": "Fundamental Javascript",
+    "text": "We began to cover the fundamentals of functions in Javascript.",
+    "mood": "Stoked"
+  },
+  {
+    "id": 4,
+    "date": "03/11/2022",
+    "concept": "Event Listeners",
+    "text": "We began to cover the fundamentals of adding event listeners and manipulating the DOM with javascript.",
+    "mood": "Stoked"
+  },
+  {
+    "id": 5,
+    "date": "03/16/2022",
+    "concept": "JSON Servers",
+    "text": "We began to cover the fundamentals of using a json server to fetch data from and manipulating the DOM with fetched data utilizing javascript.",
+    "mood": "Pumped"
+  }
+  ]
+}

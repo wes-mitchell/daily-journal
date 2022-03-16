@@ -1,3 +1,4 @@
+import { JournalEntryComponent } from "./JournalEntry.js"
 /*
  *  Purpose:
  *    To render as many journal entry components as
@@ -5,29 +6,16 @@
  *    data module component
  */
 
-import { getJournalEntries } from "./JournalData.js"
-import { JournalEntryComponent } from "./JournalEntry.js"
+export const EntryListComponent = (allPosts) => {
+	let entryHTML = "";
+		//Loop over the array of posts and for each one, invoke the Post component which returns HTML representation
+		for (const entryObject of allPosts) {
+			//what is a postObject?
+			entryHTML += JournalEntryComponent(entryObject)
+		}
+		return entryHTML;	
+}
 
-// export const entryList = () => {
 
-// DOM reference to where all entries will be rendered
-const contentElement = document.querySelector("#entryLog")
 
-export const EntryListComponent = () => {
-    // Use the journal entry data from the data module component
-    const entries = getJournalEntries()
 
-    let entryLogHTMLrepresentation = '';
-
-    for (const entry of entries) {
-      entryLogHTMLrepresentation += JournalEntryComponent(entry)
-    }
-        /*
-            Invoke the component that returns an
-            HTML representation of a single entry
-        */
-        contentElement.innerHTML += `
-          ${entryLogHTMLrepresentation}
-          `
-  }
-//} 

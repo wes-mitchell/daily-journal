@@ -1,3 +1,4 @@
+// formats date to read month / day / year
 export const formatDate = (string) => {
   const date = new Date(string) // creates a variable to hold the string version of date
   let day = date.getUTCDate() // grabs current date of variable
