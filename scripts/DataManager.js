@@ -15,3 +15,15 @@ export const getEntries = () => {
       return parsedResponse;
   })
 }
+
+export const createEntry = postObj => {
+  return fetch("http://localhost:8088/journal-entries", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postObj)
+
+  })
+      .then(response => response.json())
+}
