@@ -50,26 +50,26 @@
       "mood": "Pumped"
     },
     {
-      "date": "2022-03-17",
+      "date": "",
       "mood": "happy",
-      "concept": "Evening Test",
-      "text": "I think this is working now.",
+      "concept": "",
+      "text": "",
       "userId": 1,
       "id": 6
     },
     {
-      "date": "2022-03-17",
-      "mood": "pumped",
-      "concept": "test again",
-      "text": "ah shit its working.",
+      "date": "",
+      "mood": "happy",
+      "concept": "",
+      "text": "",
       "userId": 1,
       "id": 7
     },
     {
-      "date": "2022-02-01",
-      "mood": "pumped",
-      "concept": "does the date filter work",
-      "text": "ya?",
+      "date": "",
+      "mood": "",
+      "concept": "",
+      "text": "",
       "userId": 1,
       "id": 8
     }

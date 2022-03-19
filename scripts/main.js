@@ -31,16 +31,17 @@ eventElement.addEventListener("click", event => {
 })
 
 eventElement.addEventListener("click", event => {
-  if (event.target.id === "stash-button") {
-    alert("ya done this right again. Good job. Hopefully this will store your post soon.")
-  }
-})
-
-eventElement.addEventListener("click", event => {
   if (event.target.id === "newPost__cancel") {
       //clear the input fields
   }
 })
+
+const clearFields = () => { 
+  document.querySelector("input[name='journalDate']").value = ''
+  document.querySelector("select[name='dailyMood']").value =''
+  document.querySelector("input[name='conceptsCovered']").value =''
+  document.querySelector("textarea[name='journalEntry']").value = ''
+ }
 
 eventElement.addEventListener("click", event => {
   event.preventDefault();
@@ -62,5 +63,6 @@ eventElement.addEventListener("click", event => {
 
   // be sure to import from the DataManager
       createEntry(postObject).then(showEntryList)
+      clearFields()
   }
 })
