@@ -7,7 +7,7 @@ body {
 
 .mainsection {
   max-width: 35em;
-  justify-;
+  justify-content: center;
 }
 
 .coffee-image {
@@ -71,7 +71,7 @@ footer {
 }
 
 .dateAndMood {
-  width: 61%;
+  width: 123px;
 }
 
 #stash-button {
@@ -81,10 +81,6 @@ footer {
   width: 128px;
   text-align: left;
   margin-top: -5px;
-}
-
-.concepts {
-  margin-top: 15pem
 }
 
 #entryLog {

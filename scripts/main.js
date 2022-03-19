@@ -1,5 +1,6 @@
 import { EntryListComponent } from "./JournalEntryList.js"
 import { getEntries, getUsers, createEntry } from "./DataManager.js"
+import { buildForm } from "./form.js"
 
 const showEntryList = () => { 
   const postEl = document.querySelector("#entryLog")
@@ -9,6 +10,7 @@ const showEntryList = () => {
 }
 
 const startJournal = () => { 
+  buildForm()
   showEntryList();
 }
 

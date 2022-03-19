@@ -48,30 +48,6 @@
       "concept": "JSON Servers",
       "text": "We began to cover the fundamentals of using a json server to fetch data from and manipulating the DOM with fetched data utilizing javascript.",
       "mood": "Pumped"
-    },
-    {
-      "date": "",
-      "mood": "happy",
-      "concept": "",
-      "text": "",
-      "userId": 1,
-      "id": 6
-    },
-    {
-      "date": "",
-      "mood": "happy",
-      "concept": "",
-      "text": "",
-      "userId": 1,
-      "id": 7
-    },
-    {
-      "date": "",
-      "mood": "",
-      "concept": "",
-      "text": "",
-      "userId": 1,
-      "id": 8
     }
   ]
 }
