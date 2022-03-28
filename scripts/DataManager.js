@@ -1,3 +1,5 @@
+import { EntryListComponent } from "./JournalEntryList.js";
+
 export const getUsers = () => {
   return fetch("http://localhost:8088/users")
   .then(response => response.json())
@@ -7,23 +9,40 @@ export const getUsers = () => {
   })
 }
 
+let entryCollection = []
+
 export const getEntries = () => {
   return fetch("http://localhost:8088/journal-entries")
   .then(response => response.json())
   .then(parsedResponse => {
-      // do something with response here
+      entryCollection = parsedResponse
       return parsedResponse;
   })
 }
 
-export const createEntry = postObj => {
-  return fetch("http://localhost:8088/journal-entries", {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json"
+export const useEntries = () => { 
+  return [...entryCollection]
+ }
+
+ export const createEntry = postObj => {
+   return fetch("http://localhost:8088/journal-entries", {
+     method: "POST",
+     headers: {
+       "Content-Type": "application/json"
       },
       body: JSON.stringify(postObj)
-
-  })
-      .then(response => response.json())
-}
+      
+    })
+    .then(response => response.json())
+  }
+  
+  export const deleteEntry = () => {
+    fetch("http://localhost:8088/journal-entries", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: null
+    })
+    .then(response => response.json())
+  }

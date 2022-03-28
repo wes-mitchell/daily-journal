@@ -1,9 +1,11 @@
 import { EntryListComponent } from "./JournalEntryList.js"
-import { getEntries, getUsers, createEntry } from "./DataManager.js"
+import { getEntries, getUsers, createEntry, useEntries } from "./DataManager.js"
 import { buildForm } from "./form.js"
+
 
 const showEntryList = () => { 
   const postEl = document.querySelector("#entryLog")
+  postEl.innerHTML = ''
   getEntries().then((allEntries) => {
     postEl.innerHTML = EntryListComponent(allEntries)
   })
@@ -18,25 +20,23 @@ startJournal()
 
 const eventElement = document.querySelector('main')
 
-eventElement.addEventListener("click", event => {
-  if (event.target.id === "entry--1") {
-    alert("This is the first entry")
-  } else if (event.target.id === "entry--2") {
-    alert("This is the second entry")
-  } else if (event.target.id === "entry--3") {
-    alert("This is the third entry")
-  } else if (event.target.id === "entry--4") {
-    alert("This is the fourth entry")
-  } else if (event.target.id === "entry--5") {
-    alert("This is the fifth entry")
+const showMoodPosts = (mood) => {
+  const postEl = document.querySelector("#entryLog")
+  const filteredData = useEntries().filter(singleEntry => {
+    if (singleEntry.mood.toLowerCase() === mood) {
+      return singleEntry
+    }
+  })
+  postEl.innerHTML = EntryListComponent(filteredData)
+}  
+
+eventElement.addEventListener("change", event => {
+  if (event.target.id === "mood-drop") {
+    const currentMood = event.target.value
+    showMoodPosts(currentMood)
   }
 })
 
-eventElement.addEventListener("click", event => {
-  if (event.target.id === "newPost__cancel") {
-      //clear the input fields
-  }
-})
 
 const clearFields = () => { 
   document.querySelector("input[name='journalDate']").value = ''

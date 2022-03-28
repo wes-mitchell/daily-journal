@@ -7,6 +7,10 @@ export const JournalEntryComponent = (entry) => {
           <p class="date">${formatDate(entry.date)}</p>
           <p class="mood">${entry.mood}</p>
           <p>${entry.text}</p>
+          <div class="delete-button">
+          <label for="submit"></label><br>
+          <input type="submit" value="Delete" class="deleteButton" id="deleteButton"><br>
+          </div>
       </section>
   `
 }
