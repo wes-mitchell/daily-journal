@@ -31,6 +31,7 @@ h1 {
   font-family: 'Fira Sans Condensed', sans-serif;
   color: rgb(132, 169, 140);
   margin-left: 4.20px;
+  text-align: center;
  }
 
  h3 {
@@ -97,6 +98,16 @@ label {
   color: rgb(132, 169, 140);
 }
 
-.header {
-  justify-items: center;
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.entry-buttons {
+  display: flex;
+  margin-top: -1em;
+}
+
+.delete-button {
+  margin-right: 1em;
 }
