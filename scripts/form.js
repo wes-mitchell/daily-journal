@@ -22,5 +22,15 @@ export const buildForm = () => {
       <input type="submit" value="Stash that bad boy" class="button" id="stash-button"><br>
       </form>
     </fieldset>
-  </form>`
+  </form>
+  <br>
+  <div class="mood-filter">
+  <label for="mood-type">Sort by Mood:</label>
+  <select name="mood" id="mood-drop">
+    <option value="happy">Happy</option>
+    <option value="stoked">Stoked</option>
+    <option value="pumped">Pumped</option>
+    <option value="bummed">Bummed</option>
+  </select>
+  </div>`
 }
