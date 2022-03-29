@@ -10,11 +10,11 @@ export const JournalEntryComponent = (entry) => {
           <div class="entry-buttons">
           <div class="delete-button">
           <label for="submit"></label><br>
-          <input type="submit" value="delete" class="deleteButton" id="deleteButton"><br>
+          <input type="submit" value="delete" class="deleteButton" id="deleteButton--${entry.id}"><br>
           </div>
           <div class="edit-button">
           <label for="submit"></label><br>
-          <input type="submit" value="edit" class="deleteButton" id="editbutton">
+          <input type="submit" value="edit" class="editButton" id="editButton--${entry.id}">
           </div>
           </div>
       </section>

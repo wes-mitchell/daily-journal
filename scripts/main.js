@@ -1,11 +1,11 @@
 import { EntryListComponent } from "./JournalEntryList.js"
-import { getEntries, getUsers, createEntry, useEntries } from "./DataManager.js"
+import { getEntries, getUsers, createEntry, useEntries, getSingleEntry, updateEntry, deleteEntry} from "./DataManager.js"
 import { buildForm } from "./form.js"
 
 
 const showEntryList = () => { 
   const postEl = document.querySelector("#entryLog")
-  postEl.innerHTML = ''
+  postEl.innerHTML = '', deleteEntry
   getEntries().then((allEntries) => {
     postEl.innerHTML = EntryListComponent(allEntries)
   })
@@ -68,3 +68,29 @@ eventElement.addEventListener("click", event => {
       clearFields()
   }
 })
+
+eventElement.addEventListener("click", event => {
+  event.preventDefault();
+  if (event.target.id.startsWith('deleteButton')) {
+    const postId = event.target.id.split('--')[1]
+    deleteEntry(postId)
+    .then(response => {
+      showEntryList()
+    })
+  }
+})
+
+eventElement.addEventListener("click", event => {
+  if (event.target.id.startsWith('editButton')) {
+    const postId = event.target.id.split('--')[1];
+    getSingleEntry(postId)
+    .then(response => {
+      showEdit(response)
+    })
+  }
+})
+
+const showEdit = (postObj) => {
+  const entryEl = document.querySelector(".form")
+  entryEl.innerHTML = entryEdit(postObj)
+}
