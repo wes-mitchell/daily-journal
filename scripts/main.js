@@ -1,6 +1,7 @@
 import { EntryListComponent } from "./JournalEntryList.js"
 import { getEntries, getUsers, createEntry, useEntries, getSingleEntry, updateEntry, deleteEntry} from "./DataManager.js"
 import { buildForm } from "./form.js"
+import { entryEdit } from "./entryEdit.js"
 
 
 const showEntryList = () => { 
@@ -90,7 +91,51 @@ eventElement.addEventListener("click", event => {
   }
 })
 
-const showEdit = (postObj) => {
-  const entryEl = document.querySelector(".form")
-  entryEl.innerHTML = entryEdit(postObj)
+const showEdit = (entryObj) => {
+  entryEdit(entryObj)
+  console.log(entryObj);
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  })
 }
+
+eventElement.addEventListener("click", event => {
+  if (event.target.id.startsWith('updateButton')) {
+    const postId = event.target.id.split('--')[1]
+    const date = document.querySelector("input[name='entrydate']").value
+    const mood = document.querySelector("input[name='entrymood']").value
+    const concepts = document.querySelector("input[name='conceptsCovered']").value
+    const journalEntry = document.querySelector("textarea[name='journalEntry']").value
+
+    const entryObj = {
+      id: parseInt(postId),
+      date: (date),
+      concept: concepts,
+      mood: mood,
+      text: journalEntry
+    }
+
+    updateEntry(entryObj)
+    .then(response => {
+      showEntryList()
+      buildForm()
+    })
+
+  }
+})
+
+eventElement.addEventListener("click", event => {
+  if (event.target.id.startsWith('cancelButton')) {
+    buildForm()
+  }
+})
+
+document.querySelector("#conceptsCovered").addEventListener("keydown", keyPressEvent => {
+  const journalEntry = document.querySelector("textarea[name='journalEntry']").value
+  if (keyPressEvent.charCod === 9) {
+    console.log("string here");
+    journalEntry.innerHTML = ''
+  }
+})

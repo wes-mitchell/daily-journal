@@ -36,6 +36,7 @@ h1 {
 
  h3 {
    text-decoration: underline;
+   margin: 0px;
  }
 
 .journal-form {
@@ -92,10 +93,14 @@ footer {
 .journalEntry {
   color: rgb(132, 169, 140);
   font-family: 'Fira Sans Condensed', sans-serif;
+  border: .3px solid white;
+  margin: 5px 0;
+  padding: 0px 0px 5px 5px;
 }
 
 label {
   color: rgb(132, 169, 140);
+  margin-left: 4px;
 }
 
 header {
@@ -111,3 +116,8 @@ header {
 .delete-button {
   margin-right: 1em;
 }
+
+.updateScreenButtons {
+  display: flex;
+}
+

@@ -4,8 +4,10 @@ export const JournalEntryComponent = (entry) => {
   return `
       <section id="entry--${entry.id}" class="journalEntry">
         <h3>${entry.concept}</h3>
+        <div class="date-mood">
           <p class="date">${formatDate(entry.date)}</p>
           <p class="mood">${entry.mood}</p>
+          </div>
           <p>${entry.text}</p>
           <div class="entry-buttons">
           <div class="delete-button">

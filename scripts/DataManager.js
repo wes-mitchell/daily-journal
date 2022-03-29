@@ -42,10 +42,10 @@ export const getSingleEntry = (postId) => {
 }
 
 export const updateEntry = (entryObj) => { 
-  return fetch(`http://localhost:8088/journal-entries/${postObj.id}`, {
+  return fetch(`http://localhost:8088/journal-entries/${entryObj.id}`, {
   method: "PUT",
   headers: {
-    "Content-Type": "application.json"
+    "Content-Type": "application/json"
   },
     body: JSON.stringify(entryObj)
 
