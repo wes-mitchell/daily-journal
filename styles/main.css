@@ -20,6 +20,10 @@ body {
   height: 200px;
 }
 
+.user {
+  margin-left: 5px;
+}
+
 h1 {
   font-family: 'Fira Sans Condensed', sans-serif;
   color: rgb(132, 169, 140);
@@ -33,10 +37,16 @@ h1 {
   margin-left: 4.20px;
   text-align: center;
  }
+ .noUser {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  color: rgb(132, 169, 140);
+ }
 
  h3 {
    text-decoration: underline;
    margin: 0px;
+   font-family: 'Fira Sans Condensed', sans-serif;
+   color: rgb(132, 169, 140);
  }
 
 .journal-form {

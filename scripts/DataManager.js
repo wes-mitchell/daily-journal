@@ -12,9 +12,11 @@ export const getUsers = () => {
 let entryCollection = []
 
 export const getEntries = () => {
-  return fetch("http://localhost:8088/journal-entries")
+  // const userId = getLoggedInUser().id
+  return fetch("http://localhost:8088/journal-entries?_expand=user&_sort=date&_order=desc")
   .then(response => response.json())
   .then(parsedResponse => {
+    console.log("data with user", parsedResponse);
       entryCollection = parsedResponse
       return parsedResponse;
   })
@@ -66,4 +68,63 @@ export const updateEntry = (entryObj) => {
       
 }
 
+let loggedInUser = {}
+
+export const logoutUser = () => { 
+  loggedInUser = {}
+ }
+
+ export const getLoggedInUser = () => {
+   return loggedInUser
+ }
+
+ export const setLoggedInUser = (userObj) => { 
+   loggedInUser = userObj
+}
+
+// ====== Fetches user info based on login info  ======
+
+export const loginUser = (userObj) => { 
+  return fetch(`http://localhost:8088/users?name=${userObj.name}&email=${userObj.email}`)
+  .then(response => response.json())
+  .then(parsedUserObj => {
+    console.log(parsedUserObj); // returns as an array
+    if (parsedUserObj.length > 0) {
+    setLoggedInUser(parsedUserObj[0])
+    return getLoggedInUser() 
+  } else {
+    // no user 
+    return false
+   }
+  })
+}
+
+// ======== registers a new user obj and places it in JSON db with =======
+
+export const registerUser = (userObj) => { 
+  return fetch(`http://localhost:8088/users`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userObj)
+  })
+  .then(response => response.json())
+  .then(parsedUser => {
+    setLoggedInUser(parsedUser)
+    return getLoggedInUser()
+  })
+}
+
+// ====== gets logged in users posts only ======
+
+export const loggedUsersPosts = (userObj) => {
+  console.log(userObj);
+  return fetch(`http://localhost:8088/journal-entries?userId=${userObj.id}&_expand=user&_sort=date&_order=desc`)
+  .then(response => response.json())
+  .then(userPosts => {
+    console.log(userPosts);
+    return userPosts
+  })
+}
 

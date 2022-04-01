@@ -1,7 +1,10 @@
 import { EntryListComponent } from "./JournalEntryList.js"
-import { getEntries, getUsers, createEntry, useEntries, getSingleEntry, updateEntry, deleteEntry} from "./DataManager.js"
+import { getEntries, getUsers, createEntry, useEntries, getSingleEntry,
+         updateEntry, deleteEntry, logoutUser, getLoggedInUser, setLoggedInUser, loginUser, registerUser, loggedUsersPosts} from "./DataManager.js"
 import { buildForm } from "./form.js"
 import { entryEdit } from "./entryEdit.js"
+import { loginForm } from "./loginForm.js"
+import { RegisterForm } from "./registerForm.js"
 
 
 const showEntryList = () => { 
@@ -17,7 +20,7 @@ const startJournal = () => {
   showEntryList();
 }
 
-startJournal()
+// startJournal()
 
 const eventElement = document.querySelector('main')
 
@@ -61,7 +64,7 @@ eventElement.addEventListener("click", event => {
         mood: mood,
         concept: concepts,
         text: journalEntry,
-        userId: 1,
+        userId: getLoggedInUser().id,
     }
 
   // be sure to import from the DataManager
@@ -132,10 +135,89 @@ eventElement.addEventListener("click", event => {
   }
 })
 
-document.querySelector("#conceptsCovered").addEventListener("keydown", keyPressEvent => {
-  const journalEntry = document.querySelector("textarea[name='journalEntry']").value
-  if (keyPressEvent.charCod === 9) {
-    console.log("string here");
-    journalEntry.innerHTML = ''
+//=================== listener for logout button =============
+
+document.querySelector("#logout").addEventListener("click", event => {
+  if (event.target.id === "logout") {
+    let entryEl = document.querySelector("#entryLog")
+    entryEl.innerHTML = ''
+    logoutUser()
+    // console.log(getLoggedInUser());
+    sessionStorage.clear()
+    checkForUser()
   }
 })
+
+//==================== Checks for user on page load ===============
+
+const checkForUser = () => { 
+  if (sessionStorage.getItem('user')) {
+    setLoggedInUser(JSON.parse(sessionStorage.getItem('user')))
+    startJournal()
+  } else {
+    showLoginRegister()
+  }
+}
+
+// ====== shows Login and Register forms if no user is logged in on page load ======
+
+const showLoginRegister = () => { 
+  const entryElement = document.querySelector(".form")
+  entryElement.innerHTML = `${loginForm()} <hr> ${RegisterForm()}`
+  let entryLog = document.querySelector("#entryLog")
+  entryLog = ''
+ }
+
+// ======= checks if user has login credentials on login submit. If so it sets session storage to that user. =========
+
+eventElement.addEventListener("click", event => {
+  event.preventDefault();
+  if (event.target.id === "login__submit") {
+    const userObj = {
+      name: document.querySelector("input[name='name']").value,
+      email: document.querySelector("input[name='email']").value
+    }
+    loginUser(userObj)
+    .then(dbUserObj => {
+      if (dbUserObj) {
+      sessionStorage.setItem("user", JSON.stringify(dbUserObj))
+      startJournal()
+    } else {
+      const entryElement = document.querySelector(".form")
+      entryElement.innerHTML = `<p class="noUser">Yo, you don't exist yet. Register 4 free &#x1F918 or go straight to jail. ${loginForm()} <hr> ${RegisterForm()}`
+    }
+    })
+  }
+})
+
+// ========= Creates new user Obj on Register Click and sets as current user ==========
+
+eventElement.addEventListener("click", event => {
+  if (event.target.id === "register__submit") {
+    const userObj = {
+      name: document.querySelector("input[name='registerName']").value,
+      email: document.querySelector("input[name='registerEmail']").value
+    }
+    registerUser(userObj)
+    .then(dbUserObj => {
+      sessionStorage.setItem("user", JSON.stringify(dbUserObj))
+      startJournal()
+    })
+  }
+})
+
+document.querySelector("#userposts").addEventListener("click", event => {
+  const currentUser = getLoggedInUser()
+  let entryEl = document.querySelector('#entryLog')
+  if (event.target.id === "userposts") {
+    loggedUsersPosts(currentUser)
+    .then(userPosts => {
+      entryEl.innerHTML = EntryListComponent(userPosts)
+    })
+
+  }
+})
+
+
+
+ checkForUser()

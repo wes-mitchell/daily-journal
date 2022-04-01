@@ -2,14 +2,17 @@
   "users": [
     {
       "name": "Wes Mitchell",
+      "email": "wmdrums@gmail.com",
       "id": 1
     },
     {
       "name": "John Moler",
+      "email": "john@moler.com",
       "id": 2
     },
     {
       "name": "Keegan Kellogg",
+      "email": "keegan@kellogg.com",
       "id": 3
     }
   ],
@@ -19,35 +22,64 @@
       "date": "02/28/2022",
       "concept": "Modular Javascript Functions",
       "text": "We learned how to build HTML elements and insert them into are index.html file",
-      "mood": "Pumped"
+      "mood": "Pumped",
+      "userId": 1
     },
     {
       "id": 2,
       "date": "02/26/2022",
       "concept": "Working in a group",
       "text": "We worked in a group project titled Hello World to dividing small tasks amongst each team member to build and complete a mock travel website.",
-      "mood": "Happy"
+      "mood": "Happy",
+      "userId": 1
     },
     {
       "id": 3,
       "date": "02/14/2022",
       "concept": "Fundamental Javascript",
       "text": "We began to cover the fundamentals of functions in Javascript.",
-      "mood": "Stoked"
+      "mood": "Stoked",
+      "userId": 1
     },
     {
       "id": 4,
       "date": "03/11/2022",
       "concept": "Event Listeners",
       "text": "We began to cover the fundamentals of adding event listeners and manipulating the DOM with javascript.",
-      "mood": "Stoked"
+      "mood": "Stoked",
+      "userId": 1
     },
     {
       "id": 5,
       "date": "03/16/2022",
       "concept": "JSON Servers",
       "text": "We began to cover the fundamentals of using a json server to fetch data from and manipulating the DOM with fetched data utilizing javascript.",
-      "mood": "Pumped"
+      "mood": "Pumped",
+      "userId": 1
+    },
+    {
+      "id": 6,
+      "date": "2022-03-30",
+      "mood": "happy",
+      "concept": "Session/Local Storage",
+      "text": "Going over setting up a login and register form and using session and local storage to tie to a particular user object. ",
+      "userId": 1
+    },
+    {
+      "date": "2022-03-12",
+      "mood": "pumped",
+      "concept": "It's my damn B Day",
+      "text": "Go shawty, it's your birthday. We gonna pawty like it's your birthday. ",
+      "userId": 3,
+      "id": 7
+    },
+    {
+      "date": "2022-03-31",
+      "mood": "happy",
+      "concept": "Opening Day",
+      "text": "Opening day for baseball is next week damn it!!!! Hell ya. ",
+      "userId": 2,
+      "id": 8
     }
   ]
 }
