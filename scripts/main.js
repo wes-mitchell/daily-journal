@@ -5,22 +5,23 @@ import { buildForm } from "./form.js"
 import { entryEdit } from "./entryEdit.js"
 import { loginForm } from "./loginForm.js"
 import { RegisterForm } from "./registerForm.js"
+import { showFooter, showHeader } from "./headandFooter.js"
 
 
 const showEntryList = () => { 
   const postEl = document.querySelector("#entryLog")
-  postEl.innerHTML = '', deleteEntry
+  postEl.innerHTML = ''
   getEntries().then((allEntries) => {
     postEl.innerHTML = EntryListComponent(allEntries)
   })
 }
 
 const startJournal = () => { 
-  buildForm()
-  showEntryList();
+  showHeader()
+  showFooter() 
 }
 
-// startJournal()
+startJournal()
 
 const eventElement = document.querySelector('main')
 
@@ -105,6 +106,7 @@ const showEdit = (entryObj) => {
 }
 
 eventElement.addEventListener("click", event => {
+  event.preventDefault()
   if (event.target.id.startsWith('updateButton')) {
     const postId = event.target.id.split('--')[1]
     const date = document.querySelector("input[name='entrydate']").value
@@ -117,7 +119,8 @@ eventElement.addEventListener("click", event => {
       date: (date),
       concept: concepts,
       mood: mood,
-      text: journalEntry
+      text: journalEntry,
+      userId: getLoggedInUser().id
     }
 
     updateEntry(entryObj)
@@ -218,6 +221,4 @@ document.querySelector("#userposts").addEventListener("click", event => {
   }
 })
 
-
-
- checkForUser()
+checkForUser()

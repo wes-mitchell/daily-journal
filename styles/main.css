@@ -24,6 +24,10 @@ body {
   margin-left: 5px;
 }
 
+.like {
+  display: flex;
+}
+
 h1 {
   font-family: 'Fira Sans Condensed', sans-serif;
   color: rgb(132, 169, 140);

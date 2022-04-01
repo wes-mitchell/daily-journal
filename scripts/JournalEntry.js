@@ -33,7 +33,10 @@ export const JournalEntryComponent = (entry) => {
     <p class="mood">${entry.mood}</p>
     </div>
     <p>${entry.text}</p>
-    <p class="user">posted by: <b>${entry.user.name}</b></p>
+    <div class="like">
+    <p class="user" style="margin-left: 0px">posted by: <b>${entry.user.name}</b></p>
+    <p>&#128077 &#128078</p>
+    </div>
     </div>
     </section>`
   }
