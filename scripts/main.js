@@ -5,7 +5,7 @@ import { buildForm } from "./form.js"
 import { entryEdit } from "./entryEdit.js"
 import { loginForm } from "./loginForm.js"
 import { RegisterForm } from "./registerForm.js"
-import { showFooter, showHeader } from "./headandFooter.js"
+import { showFooter, showHeader, showAltFooter } from "./headandFooter.js"
 
 const showEntryList = () => { 
   const postEl = document.querySelector("#entryLog")
@@ -219,8 +219,11 @@ document.querySelector("footer").addEventListener("click", event => {
     loggedUsersPosts(currentUser)
     .then(userPosts => {
       entryEl.innerHTML = EntryListComponent(userPosts)
+      showAltFooter()
     })
 
+  } else if (event.target.id === "seeAll") {
+    showEntryList()
   }
 })
 

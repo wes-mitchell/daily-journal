@@ -14,3 +14,10 @@ export const showFooter = () => {
                           </div>
                         </div>`
  }
+
+ export const showAltFooter = () => { 
+  const footerEl = document.querySelector("footer")
+  footerEl.innerHTML = `<a href="https://github.com/wes-mitchell" style="text-decoration: none" class="copyright">&copy; Wesley Mitchell</a>
+  <button type="submit" id="logout">Logout</button>
+  <button type="submit" id="seeAll">See All</button>`
+ }
