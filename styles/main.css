@@ -75,11 +75,11 @@ h1 {
 footer {
   border: solid white 1px;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   text-decoration: none;
-  width: max-contentt;
-  margin-left: 4.20px;
+  margin-left: 4.2px;
   margin-top: 4.2px;
+  align-items: flex-start;
 }
 
 .copyright {
@@ -133,5 +133,9 @@ header {
 
 .updateScreenButtons {
   display: flex;
+}
+
+#logout {
+  margin: 0px 10px;
 }
 
