@@ -85,6 +85,8 @@ footer {
 .copyright {
   color: rgb(132, 169, 140);
   font-family: 'Fira Sans Condensed', sans-serif;
+  text-decoration: none;
+  align-self: end;
 }
 
 .dateAndMood {
