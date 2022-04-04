@@ -7,7 +7,6 @@ import { loginForm } from "./loginForm.js"
 import { RegisterForm } from "./registerForm.js"
 import { showFooter, showHeader } from "./headandFooter.js"
 
-
 const showEntryList = () => { 
   const postEl = document.querySelector("#entryLog")
   postEl.innerHTML = ''
@@ -18,6 +17,8 @@ const showEntryList = () => {
 
 const startJournal = () => { 
   showHeader()
+  buildForm()
+  showEntryList()
   showFooter() 
 }
 
@@ -140,8 +141,9 @@ eventElement.addEventListener("click", event => {
 
 //=================== listener for logout button =============
 
-document.querySelector("#logout").addEventListener("click", event => {
+document.querySelector("footer").addEventListener("click", event => {
   if (event.target.id === "logout") {
+    console.log("you clicked logout");
     let entryEl = document.querySelector("#entryLog")
     entryEl.innerHTML = ''
     logoutUser()
@@ -157,6 +159,7 @@ const checkForUser = () => {
   if (sessionStorage.getItem('user')) {
     setLoggedInUser(JSON.parse(sessionStorage.getItem('user')))
     startJournal()
+    show
   } else {
     showLoginRegister()
   }
@@ -209,7 +212,7 @@ eventElement.addEventListener("click", event => {
   }
 })
 
-document.querySelector("#userposts").addEventListener("click", event => {
+document.querySelector("footer").addEventListener("click", event => {
   const currentUser = getLoggedInUser()
   let entryEl = document.querySelector('#entryLog')
   if (event.target.id === "userposts") {
